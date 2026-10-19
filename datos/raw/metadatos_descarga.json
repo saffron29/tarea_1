@@ -1,0 +1,19 @@
+{
+  "medio": "La Republica",
+  "fecha_descarga": "2026-10-18T21:20:45-05:00",
+  "pedidos_http": 362,
+  "user_agent": "Mozilla/5.0 (compatible; TareaAcademica/1.0; Diplomado PUCP - curso Python Intermedio para CCSS)",
+  "pausa_entre_pedidos_s": [
+    1,
+    2
+  ],
+  "reintentos_max": 1,
+  "feeds_rss": [
+    "politica",
+    "economia",
+    "deportes",
+    "ciencia",
+    "tecnologia",
+    "home"
+  ]
+}

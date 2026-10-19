@@ -1,0 +1,66 @@
+{
+  "fecha": "2026-10-18",
+  "fecha_descarga": "2026-10-18",
+  "n_noticias": 399,
+  "n_train": 279,
+  "n_val": 60,
+  "n_test": 60,
+  "modelo_elegido": "BETO",
+  "modelo_base": "dccuchile/bert-base-spanish-wwm-cased",
+  "accuracy_test": 0.8833,
+  "f1_macro_test": 0.8828,
+  "zero_shot_40": {
+    "modelo": "Recognai/bert-base-spanish-wwm-cased-xnli",
+    "accuracy": 0.7,
+    "f1_macro": 0.6968
+  },
+  "llm": {
+    "modelo": "Qwen/Qwen2.5-1.5B-Instruct",
+    "acuerdo_editorial_total": 0.8145,
+    "concordancia_auditoria": 0.75,
+    "aciertos_auditoria": 15,
+    "n_auditoria": 20
+  },
+  "comparativa_test": [
+    {
+      "enfoque": "1 · Zero-shot (piso)",
+      "modelo": "Recognai/bert-base-spanish-wwm-cased-xnli",
+      "entrada": "titular",
+      "accuracy_test": 0.617,
+      "f1_macro_test": 0.592,
+      "latencia_ms_por_titular_cpu": 233,
+      "parametros": "110 M",
+      "¿entrena con nuestros datos?": "no"
+    },
+    {
+      "enfoque": "2 · LLM débil (maestro)",
+      "modelo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "entrada": "titular + bajada",
+      "accuracy_test": 0.8,
+      "f1_macro_test": 0.792,
+      "latencia_ms_por_titular_cpu": 4295,
+      "parametros": "1,544 M",
+      "¿entrena con nuestros datos?": "no"
+    },
+    {
+      "enfoque": "3 · Transformer fine-tuned",
+      "modelo": "BETO (dccuchile/bert-base-spanish-wwm-cased)",
+      "entrada": "titular",
+      "accuracy_test": 0.883,
+      "f1_macro_test": 0.883,
+      "latencia_ms_por_titular_cpu": 51,
+      "parametros": "110 M",
+      "¿entrena con nuestros datos?": "sí (etiquetas del LLM)"
+    },
+    {
+      "enfoque": "Extra · TF-IDF + reg. logística",
+      "modelo": "scikit-learn",
+      "entrada": "titular",
+      "accuracy_test": 0.8,
+      "f1_macro_test": 0.789,
+      "latencia_ms_por_titular_cpu": 2,
+      "parametros": "<1 M",
+      "¿entrena con nuestros datos?": "sí (etiquetas del LLM)"
+    }
+  ]
+}

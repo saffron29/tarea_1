@@ -1,0 +1,19 @@
+# Pesos del modelo: superan los 100 MB que acepta GitHub
+modelo/*.safetensors
+modelo/*.bin
+modelo/checkpoint-*/
+_entrenamiento/
+
+# Entornos y secretos
+.venv*/
+venv/
+.env
+.env.*
+!.env.example
+
+# Artefactos generados
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+.DS_Store

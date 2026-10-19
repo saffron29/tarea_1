@@ -1,0 +1,36 @@
+# Versiones exactas con las que se ejecutaron los notebooks y la app (Python 3.14, Windows, CPU).
+# Instalar con:  pip install -r requirements.txt
+
+# --- App (streamlit run app.py)
+streamlit==1.58.0
+pandas==3.0.3
+numpy==2.4.6
+plotly==6.7.0
+scikit-learn==1.9.0
+joblib==1.5.3
+# PyTorch solo CPU. En Windows y macOS, PyPI ya publica la versión CPU. En Linux x86_64
+# (p. ej. Streamlit Cloud) se usa la rueda CPU oficial para no bajar ~2 GB de librerías CUDA.
+torch==2.14.1 ; sys_platform != "linux" or platform_machine != "x86_64" or python_version < "3.12" or python_version > "3.14"
+torch @ https://download.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl ; sys_platform == "linux" and platform_machine == "x86_64" and python_version == "3.12"
+torch @ https://download.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp313-cp313-manylinux_2_28_x86_64.whl ; sys_platform == "linux" and platform_machine == "x86_64" and python_version == "3.13"
+torch @ https://download.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp314-cp314-manylinux_2_28_x86_64.whl ; sys_platform == "linux" and platform_machine == "x86_64" and python_version == "3.14"
+transformers==5.20.1
+tokenizers==0.23.3
+safetensors==0.8.0
+huggingface_hub==2.2.0
+sentencepiece==0.2.2
+protobuf==6.33.5
+
+# --- Notebooks (recolección, LLM, fine-tuning y gráficos)
+requests==2.34.2
+beautifulsoup4==4.15.0
+lxml==6.1.3
+datasets==5.1.0
+pyarrow==26.0.0
+accelerate==1.15.0
+seaborn==0.13.2
+matplotlib==3.11.0
+kaleido==1.5.0
+nbformat==5.10.4
+ipykernel==6.31.0
+jupyter==1.1.1
